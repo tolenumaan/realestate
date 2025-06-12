@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insignia Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#4A003D', // Deep Aubergine (Primary Action)
+              'brand-secondary': '#6A2E5D', // Medium Aubergine (Secondary Elements)
+              'brand-accent': '#D4AF37', // Rich Gold (Accent)
+              'brand-accent-muted': '#B08D57', // Antique Gold (Muted Accent)
+              'brand-bg-deep': '#120E16', // Very Dark Plum/Charcoal (Main Background)
+              'brand-bg-surface': '#211D29', // Dark Plum/Charcoal (Surface Backgrounds)
+              'brand-bg-surface-light': '#2C2836', // Slightly Lighter for hover
+              'brand-text-light': '#F0E8F3', // Light Lavender/Off-White (Primary Text)
+              'brand-text-medium': '#C3B8C9', // Muted Lavender/Grey (Secondary Text)
+              'brand-text-dark': '#312A38',  // Dark Plum (Text on Light/Gold Backgrounds)
+              'brand-text-placeholder': '#897F92', // Muted Lavender for placeholders
+              'brand-border-primary': '#312A38', // Darker than surface (Primary Border)
+              'brand-border-accent': '#B08D57', // Antique Gold (Accent Border)
+              
+              'brand-success': '#638A54',      // Muted Olive Green
+              'brand-warning': '#C78D4D',      // Terracotta/Amber
+              'brand-danger': '#B5484D',       // Muted Crimson
+              'brand-info': '#6A839C',         // Dusty Blue/Slate
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+              heading: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'], // For headings
+            },
+            spacing: {
+              '72': '18rem',
+              '80': '20rem',
+              '96': '24rem',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px; /* Slightly larger base for polish */
+        line-height: 1.6; /* Improved line height */
+        overscroll-behavior: none;
+        background: linear-gradient(135deg, #120E16 0%, #0a080d 100%); /* brand-bg-deep to slightly darker variant */
+        color: #F0E8F3; /* brand-text-light */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 600; /* Bolder headings */
+        letter-spacing: -0.01em; /* Subtle letter spacing for headings */
+      }
+      /* Custom scrollbar for a luxury feel - refined for glassmorphism */
+      ::-webkit-scrollbar {
+        width: 8px; /* Slimmer scrollbar */
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(33, 29, 41, 0.15); /* brand-bg-surface with low alpha */
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(212, 175, 55, 0.45); /* brand-accent with alpha */
+        border-radius: 10px;
+        /* border: 1.5px solid #18141F; No border for cleaner glass look */
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(212, 175, 55, 0.65); /* brand-accent with higher alpha on hover */
+      }
+      
+      .styled-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      .styled-scrollbar::-webkit-scrollbar-track {
+        background: rgba(44, 40, 54, 0.2); /* brand-bg-surface-light with alpha */
+      }
+       .styled-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(212, 175, 55, 0.4); /* brand-accent with alpha */
+        /* border: 1px solid #2C2836; No border for cleaner glass look */
+      }
+      .styled-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(212, 175, 55, 0.6); /* brand-accent with higher alpha on hover */
+      }
+
+      /* Helper for components if specific backdrop-filter prefixes are needed outside Tailwind */
+      .custom-backdrop-blur {
+        -webkit-backdrop-filter: blur(12px) saturate(160%);
+        backdrop-filter: blur(12px) saturate(160%);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@heroicons/react/": "https://esm.sh/@heroicons/react@^2.2.0/",
+    "recharts": "https://esm.sh/recharts@^2.15.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.4.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
